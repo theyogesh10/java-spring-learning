@@ -1,0 +1,84 @@
+# Eclipse project files
+.classpath
+.project
+.settings/
+.buildpath
+
+# Eclipse workspace files
+.metadata/
+
+# Compiled Java files
+*.class
+
+# Build directories
+bin/
+target/
+out/
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Maven directories (if you're using Maven)
+.mvn/
+target/
+
+# Gradle directories (if you're using Gradle)
+.gradle/
+build/
+
+# Spring and Hibernate generated files
+*.log
+*.tmp
+
+# J2EE specific folders (deployment)
+.wtpmodules/
+*.war
+*.ear
+*.jar
+
+# Hibernate files
+hibernate.cfg.xml
+hibernate.hbm.xml
+*.hbm.xml
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Tomcat or server-related files
+/tomcat/
+/catalina/
+/work/
+
+# Maven repository
+.repository/
+
+# Spring Boot JAR
+*.jar
+
+# Database files (local databases)
+*.db
+*.h2.db
+
+# Test output
+/test-output/
+/target/test-classes/
+
+# OS generated files (Windows, macOS)
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# Docker-related files (if using Docker)
+docker-compose.yml
+Dockerfile
