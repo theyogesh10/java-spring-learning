@@ -43,20 +43,20 @@ public abstract class Account {
 		this.balance = balance;
 	}
 	
-	public void deposit(float amount) {
-		balance+=amount;
-	}
-	
-	public void withdraw(float amount) {
-		balance-=amount;	
-	}
-
 	public float getInterestRate() {
 		return interestRate;
 	}
 
 	public void setInterestRate(float interestRate) {
 		this.interestRate = interestRate;
+	}
+	
+	public void deposit(float amount) {
+		balance+=amount;
+	}
+	
+	public void withdraw(float amount) {
+		balance-=amount;	
 	}
 	
 	public abstract void calcInterest();
