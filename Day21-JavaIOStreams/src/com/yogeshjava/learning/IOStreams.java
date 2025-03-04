@@ -1,5 +1,7 @@
 package com.yogeshjava.learning;
 
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -37,12 +39,19 @@ public class IOStreams {
 		
 		
 		// Approach 2 : Typically used
-		String data="Hello World!";
-		try {
-			FileOutputStream fout = new FileOutputStream("output.txt");
-			byte[] dataToStore = data.getBytes();
-			fout.write(dataToStore);
-			fout.close();
+		String data="This is test taken through the stream chain";
+		
+		// try-with-resources
+		try (
+				// This is Automatic Resource Management (ARM)  
+				// This is an example of Decorator design pattern 
+				FileOutputStream fout = new FileOutputStream("output.txt");
+				BufferedOutputStream bout=new BufferedOutputStream(fout);
+				DataOutputStream dout=new DataOutputStream(bout);
+			) 
+		{
+			dout.writeUTF(data);
+			dout.writeUTF("Some more data");
 		} 
 		catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
