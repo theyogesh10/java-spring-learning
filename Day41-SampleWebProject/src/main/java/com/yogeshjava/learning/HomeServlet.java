@@ -1,8 +1,8 @@
 package com.yogeshjava.learning;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ValidateServlet
+ * Servlet implementation class HomeServlet
  */
-@WebServlet("/verify")
-public class ValidateServlet extends HttpServlet {
+@WebServlet("/menu")
+public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ValidateServlet() {
+    public HomeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,22 +29,12 @@ public class ValidateServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String user=request.getParameter("userName");
-		String pass=request.getParameter("password");
-		HttpSession ses=request.getSession();
-		ses.setAttribute("userdata", user);
-		User ref=new User(user,pass);
-		VerificationProcess businessRules=new VerificationProcess();
-		boolean valid=businessRules.isValid(ref);
-		if(valid==true) {
-			RequestDispatcher rd=request.getRequestDispatcher("menu.jsp");
-			rd.forward(request, response);
-		}
-		else {
-			response.sendRedirect("error.html");
-		
-		}
-		
+		PrintWriter out=response.getWriter();
+		HttpSession s=request.getSession();
+		String userName=(String) s.getAttribute("userdata");
+		out.println("You are valid user " + userName);
+		out.println("This is the main menu of the application");
+		out.println("<a href='option1'>Option1</a>");
 	}
 
 	/**
