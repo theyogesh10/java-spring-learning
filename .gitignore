@@ -38,10 +38,6 @@ build/
 *.ear
 *.jar
 
-# Hibernate files
-hibernate.cfg.xml
-hibernate.hbm.xml
-*.hbm.xml
 
 # IntelliJ IDEA
 .idea/

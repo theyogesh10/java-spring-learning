@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.yogeshjava.learning.Employee">
+		<id name="empId" column="empid">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="empName" column="empname"></property>
+		<property name="salary"></property>
+		<component name="postalAddress" class="com.yogeshjava.learning.Address">
+			<property name="line1" column="line1"></property>
+			<property name="line2" column="state"></property>
+		</component>
+	</class>
+</hibernate-mapping>
