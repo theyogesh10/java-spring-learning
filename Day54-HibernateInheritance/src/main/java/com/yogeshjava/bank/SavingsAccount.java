@@ -4,8 +4,18 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+//1 Table per Class Hierarchy
+// @Entity
+// @DiscriminatorValue("SA")
+
+//2 Table per Concrete Class
+// @Entity
+// @Table(name="savingsperconcrete")
+
+//3 Table per Sub-Class
 @Entity
 @Table(name="savingspersub")
+
 public class SavingsAccount extends Account {
 
 	float minBalance;
@@ -26,6 +36,5 @@ public class SavingsAccount extends Account {
 	public void setMinBalance(float minBalance) {
 		this.minBalance = minBalance;
 	}
-	
 	
 }
