@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="player" class="com.yogeshjava.learning.Player" lazy-init="true" init-method="setup">
+		<property name="playerId" value="1"></property>
+		<property name="playerName" value="Harmanpreet Kaur"></property>
+		<property name="jerseyNumber" value="7"></property>
+		<property name="dob" ref="date"></property>
+	</bean>
+	
+	<bean id="date" class="com.yogeshjava.learning.SpecialDate">
+		<property name="day" value="25"></property>
+		<property name="month" value="12"></property>
+		<property name="year" value="1984"></property>
+		
+	</bean>
+
+</beans>
