@@ -25,7 +25,7 @@ public class DataController {
 	
 	@GetMapping("/user")
 	public List<User> getAllUsers() { 
-		service.getAllData();
+		//service.getAllData();
 		List<User> data=repo.findAll(); 
 		return data; 
 	}
